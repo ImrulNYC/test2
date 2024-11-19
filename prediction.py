@@ -3,6 +3,7 @@ import torch
 from transformers import AutoConfig, AutoModelForImageClassification, ViTFeatureExtractor
 from safetensors.torch import load_file
 import urllib.request
+import streamlit as st
 
 # Bucket and model keys
 BUCKET_URL = "https://flowerm.s3.amazonaws.com/"
@@ -67,3 +68,4 @@ def predict_flower(image, model, preprocessor, id_to_label):
         return predicted_label, confidence
     else:
         return None, None
+
